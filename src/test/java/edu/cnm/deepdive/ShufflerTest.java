@@ -17,17 +17,18 @@ class ShufflerTest {
     Shuffler shuffler = new Shuffler(new Random());
     shuffler.shuffle(input);
     assertFalse(Arrays.equals(input, testCopy));
-    buildSet(testCopy);
-    Set<Integer> shuffled = new HashSet<>();
+    Set<Integer> original = buildSet(testCopy);
+    Set<Integer> shuffled = buildSet(input);
+    assertEquals(original, shuffled);
 
    }
 
-  private Set<Integer> buildSet(int[] testCopy) {
-    Set<Integer> original = new HashSet<>();
-    for (int value : testCopy) {
-      original.add(value);
+  private Set<Integer> buildSet(int[] source) {
+    Set<Integer> target = new HashSet<>();
+    for (int value : source) {
+      target.add(value);
     }
-    return original
+    return target;
   }
 
   private int[] generate(int size) {
