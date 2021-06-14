@@ -18,7 +18,7 @@ public class Shuffler {
       int temp = data[targetIndex];
 
       data[targetIndex] = data[sourceIndex];
-      data[sourceIndex] = temp; 
+      data[sourceIndex] = temp;
     }
   }
 }
