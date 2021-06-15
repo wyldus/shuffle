@@ -15,7 +15,7 @@ class ShufflerTest {
     int[] input = generate(1_000_000);
     int[] testCopy = input.clone();
     Shuffler shuffler = new Shuffler(new Random());
-    shuffler.shuffle(input);
+    shuffler.shuffle (input);
     assertFalse(Arrays.equals(input, testCopy));
     Set<Integer> original = buildSet(testCopy);
     Set<Integer> shuffled = buildSet(input);
